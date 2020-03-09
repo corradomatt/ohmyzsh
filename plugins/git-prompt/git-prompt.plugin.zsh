@@ -52,7 +52,7 @@ git_super_status() {
       if [ "$GIT_AHEAD" -ne "0" ]; then
           STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_AHEAD$GIT_AHEAD%{${reset_color}%}"
       fi
-      STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_SEPARATOR"
+      STATUS="$STATUS $ZSH_THEME_GIT_PROMPT_SEPARATOR"
       if [ "$GIT_STAGED" -ne "0" ]; then
           STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_STAGED$GIT_STAGED%{${reset_color}%}"
       fi
@@ -87,4 +87,4 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{…%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 
 # Set the prompt.
-RPROMPT='$(git_super_status)'
+# RPROMPT='$(git_super_status)'

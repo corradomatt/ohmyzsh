@@ -84,8 +84,8 @@ alias kgdw='kgd --watch'
 alias kgdwide='kgd -o wide'
 alias ked='kubectl edit deployment'
 alias kdd='kubectl describe deployment'
-alias kdeld='kubectl delete deployment'
-alias ksd='kubectl scale deployment'
+# alias kdeld='kubectl delete deployment'
+# alias ksd='kubectl scale deployment'
 alias krsd='kubectl rollout status deployment'
 kres(){
     kubectl set env $@ REFRESHED_AT=$(date +%Y%m%d%H%M%S)
@@ -132,4 +132,3 @@ alias kgpvcw='kgpvc --watch'
 alias kepvc='kubectl edit pvc'
 alias kdpvc='kubectl describe pvc'
 alias kdelpvc='kubectl delete pvc'
-

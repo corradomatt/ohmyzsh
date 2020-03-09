@@ -31,7 +31,7 @@ zmodload zsh/datetime
 # Override these values in ~/.zshrc
 KUBE_PS1_BINARY="${KUBE_PS1_BINARY:-kubectl}"
 KUBE_PS1_SYMBOL_ENABLE="${KUBE_PS1_SYMBOL_ENABLE:-true}"
-KUBE_PS1_SYMBOL_DEFAULT="${KUBE_PS1_SYMBOL_DEFAULT:-\u2388 }"
+KUBE_PS1_SYMBOL_DEFAULT="${KUBE_PS1_SYMBOL_DEFAULT:-\u2388}"
 KUBE_PS1_SYMBOL_USE_IMG="${KUBE_PS1_SYMBOL_USE_IMG:-false}"
 KUBE_PS1_NS_ENABLE="${KUBE_PS1_NS_ENABLE:-true}"
 KUBE_PS1_SEPARATOR="${KUBE_PS1_SEPARATOR-|}"
@@ -41,9 +41,9 @@ KUBE_PS1_SUFFIX="${KUBE_PS1_SUFFIX-)}"
 KUBE_PS1_LAST_TIME=0
 KUBE_PS1_ENABLED=true
 
-KUBE_PS1_COLOR_SYMBOL="%{$fg[blue]%}"
-KUBE_PS1_COLOR_CONTEXT="%{$fg[red]%}"
-KUBE_PS1_COLOR_NS="%{$fg[cyan]%}"
+KUBE_PS1_COLOR_SYMBOL="%{$FG[014]%}"
+KUBE_PS1_COLOR_CONTEXT="%{$FG[046]%}"
+KUBE_PS1_COLOR_NS="%{$reset_color%}"
 
 _kube_ps1_binary_check() {
   command -v "$1" >/dev/null
@@ -149,7 +149,7 @@ kube_ps1 () {
 
   KUBE_PS1="${reset_color}$KUBE_PS1_PREFIX"
   KUBE_PS1+="${KUBE_PS1_COLOR_SYMBOL}$(_kube_ps1_symbol)"
-  KUBE_PS1+="${reset_color}$KUBE_PS1_SEPERATOR"
+  KUBE_PS1+="${reset_color}$KUBE_PS1_SEPARATOR"
   KUBE_PS1+="${KUBE_PS1_COLOR_CONTEXT}$KUBE_PS1_CONTEXT${reset_color}"
   KUBE_PS1+="$KUBE_PS1_DIVIDER"
   KUBE_PS1+="${KUBE_PS1_COLOR_NS}$KUBE_PS1_NAMESPACE${reset_color}"
